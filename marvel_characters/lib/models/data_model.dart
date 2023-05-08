@@ -1,4 +1,4 @@
-import 'package:marvel_characters/models/result_model.dart';
+import 'package:marvel_characters/models/character_model.dart';
 
 class Data {
   int? offset;
