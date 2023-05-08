@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:marvel_characters/models/character_model.dart';
+import 'package:marvel_characters/models/response/character_model.dart';
 import 'package:marvel_characters/modules/details/view/details_page.dart';
 import 'package:marvel_characters/modules/home/home_bindings.dart';
 import 'package:marvel_characters/modules/home/view/home_page.dart';

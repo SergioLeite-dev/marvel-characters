@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:marvel_characters/models/character_model.dart';
+import 'package:marvel_characters/models/response/character_model.dart';
 
 class DetailsPage extends StatelessWidget {
   final Character character;

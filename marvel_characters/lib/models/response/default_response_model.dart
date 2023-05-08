@@ -1,4 +1,4 @@
-import 'package:marvel_characters/models/data_model.dart';
+import 'package:marvel_characters/models/response/data_model.dart';
 
 class DefaultResponse {
   int? code;

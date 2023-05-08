@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:marvel_characters/configuration/environment_values.dart';
-import 'package:marvel_characters/models/character_model.dart';
-import 'package:marvel_characters/models/default_response_model.dart';
+import 'package:marvel_characters/models/response/character_model.dart';
+import 'package:marvel_characters/models/response/default_response_model.dart';
 import 'package:marvel_characters/services/http_client_service.dart';
 
 class HomeController extends GetxController {

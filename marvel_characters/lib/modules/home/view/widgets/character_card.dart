@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:marvel_characters/application/route_manager.dart';
-import 'package:marvel_characters/models/character_model.dart';
+import 'package:marvel_characters/models/response/character_model.dart';
 
 class CharacterCard extends StatelessWidget {
   const CharacterCard(this.character, {super.key});

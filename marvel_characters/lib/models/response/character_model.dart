@@ -1,7 +1,7 @@
-import 'package:marvel_characters/models/resource_model.dart';
-import 'package:marvel_characters/models/stories_model.dart';
-import 'package:marvel_characters/models/thumbnail_model.dart';
-import 'package:marvel_characters/models/url_model.dart';
+import 'package:marvel_characters/models/response/resource_model.dart';
+import 'package:marvel_characters/models/response/stories_model.dart';
+import 'package:marvel_characters/models/response/thumbnail_model.dart';
+import 'package:marvel_characters/models/response/url_model.dart';
 
 class Character {
   int? id;
