@@ -24,7 +24,7 @@ class CharacterCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
         ),
         child: Hero(
-          tag: character!.id!,
+          tag: character!.id!.toString() + character!.name!,
           child: ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(40)),
             child: Stack(

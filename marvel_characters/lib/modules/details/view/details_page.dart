@@ -18,7 +18,7 @@ class DetailsPage extends StatelessWidget {
         child: Column(
           children: [
             Hero(
-                tag: character.id!,
+                tag: character.id!.toString() + character.name!,
                 child: thumbPath != null
                     ? Image.network(
                         thumbPath,
@@ -42,7 +42,7 @@ class DetailsPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(26, 0, 26, 0),
               child: Text(
-                character.description ?? "",
+                (character.description != null && character.description != "") ? character.description! : "No Description available.",
                 textAlign: TextAlign.justify,
                 style: const TextStyle(
                   color: Colors.white,
@@ -58,7 +58,7 @@ class DetailsPage extends StatelessWidget {
         onPressed: () {
           Get.back();
         },
-        child: Icon(Icons.close),
+        child: const Icon(Icons.close),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
