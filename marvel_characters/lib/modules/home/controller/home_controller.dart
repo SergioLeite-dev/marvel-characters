@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:marvel_characters/configuration/environment_values.dart';
+import 'package:marvel_characters/models/request/characters_request_model.dart';
 import 'package:marvel_characters/models/response/character_model.dart';
 import 'package:marvel_characters/models/response/default_response_model.dart';
 import 'package:marvel_characters/services/http_client_service.dart';
@@ -11,6 +12,7 @@ class HomeController extends GetxController {
 
   HomeController(this._client);
 
+  var charactersRequest = CharactersRequestModel(offset: 0);
   DefaultResponse? response;
   List<Character> characters = [];
 
@@ -22,8 +24,7 @@ class HomeController extends GetxController {
 
   Future<void> getCharacters() async {
     try {
-      //TODO: Replace inline map with reference to a request model.
-      final responseRaw = await _client.get(EnvironmentValues.apiUrl, {"apikey": EnvironmentValues.publicKey, "hash": EnvironmentValues.hash, "ts": "1"});
+      final responseRaw = await _client.get(EnvironmentValues.apiUrl, charactersRequest.toMap());
       response = DefaultResponse.fromJson(responseRaw);
       characters = response?.data?.results ?? [];
       debugPrint(response?.data?.results?[0].name);
