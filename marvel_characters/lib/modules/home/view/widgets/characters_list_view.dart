@@ -19,8 +19,8 @@ class CharactersListView extends StatelessWidget {
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           shrinkWrap: true,
           controller: controller.scrollController,
-          itemCount: controller.allCharacters.length,
-          itemBuilder: (context, index) => CharacterCard(controller.allCharacters[index]),
+          itemCount: controller.filteredCharacters.length,
+          itemBuilder: (context, index) => CharacterCard(controller.filteredCharacters[index]),
         );
       },
     );

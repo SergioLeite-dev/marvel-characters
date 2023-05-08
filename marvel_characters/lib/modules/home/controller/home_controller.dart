@@ -15,6 +15,9 @@ class HomeController extends GetxController {
   var charactersRequest = CharactersRequestModel(offset: 0);
   DefaultResponse? response;
   List<Character> allCharacters = [];
+  List<Character> filteredCharacters = [];
+  String filter = "";
+  final filterController = TextEditingController();
 
   //Infinite Scroll
   bool finishedInitializing = false;
@@ -40,7 +43,9 @@ class HomeController extends GetxController {
       final responseRaw = await _client.get(EnvironmentValues.apiUrl, charactersRequest.toMap());
       response = DefaultResponse.fromJson(responseRaw);
       final newCharacters = response?.data?.results ?? [];
-      addNewCharactersToAll(newCharacters);
+      _addNewCharactersToAll(newCharacters);
+      filteredCharacters = allCharacters;
+      if (filter != "") filterCharacters();
       update();
     } on DioError catch (e) {
       debugPrint(e.message);
@@ -50,7 +55,7 @@ class HomeController extends GetxController {
     }
   }
 
-  void addNewCharactersToAll(List<Character> characters) {
+  void _addNewCharactersToAll(List<Character> characters) {
     for (var c in characters) {
       final existingIndex = allCharacters.indexWhere((i) => i.id == c.id);
       if (existingIndex < 0) {
@@ -60,12 +65,21 @@ class HomeController extends GetxController {
     }
   }
 
+  void filterCharacters() {
+    //TODO: Improve filter functionality
+    filter = filterController.text;
+    print("filter: $filter");
+    filteredCharacters = allCharacters.where((c) => c.name!.toLowerCase().contains(filter.toLowerCase())).toList();
+    update();
+  }
+
   _scrollListener() {
+    //TODO: Add Loading Animation.
     if (scrollController.offset >= scrollController.position.maxScrollExtent && !scrollController.position.outOfRange) {
       isLoading = true;
 
       if (isLoading && finishedInitializing) {
-        debugPrint("Loading more Characters");
+        debugPrint("Loading more Characters...");
         pageCount++;
         charactersRequest = charactersRequest.copyWith(offset: pageCount * 15);
         getCharacters();

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:marvel_characters/modules/home/controller/home_controller.dart';
 
 class SearchButton extends StatelessWidget {
   const SearchButton({super.key});
@@ -8,22 +10,26 @@ class SearchButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.only(
-            topRight: Radius.circular(radius),
-            bottomRight: Radius.circular(radius),
-          )),
+    return GetBuilder<HomeController>(builder: (controller) {
+      return SizedBox(
+        height: height,
+        child: ElevatedButton(
+          onPressed: () {
+            controller.filterCharacters();
+          },
+          style: ElevatedButton.styleFrom(
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+              topRight: Radius.circular(radius),
+              bottomRight: Radius.circular(radius),
+            )),
+          ),
+          child: const Icon(
+            Icons.search,
+            size: iconSize,
+          ),
         ),
-        child: const Icon(
-          Icons.search,
-          size: iconSize,
-        ),
-      ),
-    );
+      );
+    });
   }
 }
