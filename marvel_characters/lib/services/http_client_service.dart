@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class HttpClientService {
-  Dio _dio;
+  final Dio _dio;
 
   HttpClientService(
     this._dio,

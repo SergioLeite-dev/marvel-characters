@@ -15,6 +15,12 @@ class HomePage extends StatelessWidget {
       body: const Center(
         child: Text("Home Page."),
       ),
+      //TODO: Testing Purposes:
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await _controller.getCharacters();
+        },
+      ),
     );
   }
 }
