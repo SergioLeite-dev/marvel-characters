@@ -3,7 +3,7 @@ import 'package:marvel_characters/models/stories_model.dart';
 import 'package:marvel_characters/models/thumbnail_model.dart';
 import 'package:marvel_characters/models/url_model.dart';
 
-class Result {
+class Character {
   int? id;
   String? name;
   String? description;
@@ -16,7 +16,7 @@ class Result {
   Resource? events;
   List<Url>? urls;
 
-  Result._({
+  Character._({
     this.id,
     this.name,
     this.description,
@@ -30,8 +30,8 @@ class Result {
     this.urls,
   });
 
-  factory Result.fromJson(Map<String, dynamic> json) {
-    return Result._(
+  factory Character.fromJson(Map<String, dynamic> json) {
+    return Character._(
       id: json["id"],
       name: json["name"],
       description: json["description"],

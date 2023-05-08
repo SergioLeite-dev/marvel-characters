@@ -5,7 +5,7 @@ class Data {
   int? limit;
   int? total;
   int? count;
-  List<Result>? results;
+  List<Character>? results;
 
   Data._({
     this.offset,
@@ -21,7 +21,7 @@ class Data {
       limit: json["limit"],
       total: json["total"],
       count: json["count"],
-      results: json["results"] == null ? null : List<Result>.from(json["results"].map((x) => Result.fromJson(x))),
+      results: json["results"] == null ? null : List<Character>.from(json["results"].map((x) => Character.fromJson(x))),
     );
   }
 }
