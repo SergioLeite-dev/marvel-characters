@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:marvel_characters/application/application_binding.dart';
 import 'package:marvel_characters/application/route_manager.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialBinding: ApplicationBinding(),
       getPages: RouteManager.routes,
     );
   }
