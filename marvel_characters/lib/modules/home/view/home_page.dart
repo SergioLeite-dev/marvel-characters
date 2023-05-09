@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marvel_characters/modules/home/controller/home_controller.dart';
 import 'package:marvel_characters/modules/home/view/widgets/characters_list_view.dart';
+import 'package:marvel_characters/modules/home/view/widgets/get_to_favorites_button.dart';
 import 'package:marvel_characters/modules/home/view/widgets/search_button.dart';
 import 'package:marvel_characters/modules/home/view/widgets/search_text_field.dart';
 
@@ -21,6 +22,8 @@ class HomePage extends StatelessWidget {
           children: [
             Row(
               children: const [
+                GetToFavoritesButton(),
+                SizedBox(width: 16),
                 SearchTextField(),
                 SearchButton(),
               ],
