@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:marvel_characters/models/response/character_model.dart';
+import 'package:marvel_characters/modules/shared/widgets/get_back_button.dart';
 
 class DetailsPage extends StatelessWidget {
   final Character character;
@@ -40,7 +40,7 @@ class DetailsPage extends StatelessWidget {
               child: Divider(thickness: 0.6, color: Colors.white),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(26, 0, 26, 0),
+              padding: const EdgeInsets.fromLTRB(26, 0, 26, 16),
               child: Text(
                 (character.description != null && character.description != "") ? character.description! : "No Description available.",
                 textAlign: TextAlign.justify,
@@ -50,17 +50,63 @@ class DetailsPage extends StatelessWidget {
                 ),
               ),
             ),
+            const Text(
+              "See also:",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white, fontSize: 16),
+            ),
+            //RelatedCarousel(),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        mini: true,
-        onPressed: () {
-          Get.back();
-        },
-        child: const Icon(Icons.close),
-      ),
+      floatingActionButton: const GetBackButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
   }
 }
+
+// class RelatedCarousel extends StatelessWidget {
+//   const RelatedCarousel({
+//     super.key,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       margin: const EdgeInsets.only(top: 8),
+//       height: 200,
+//       padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
+//       child: PageView(
+//         controller: PageController(viewportFraction: 0.4),
+//         padEnds: false,
+//         scrollDirection: Axis.horizontal,
+//         children: [
+//           Container(
+//             margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+//             color: Colors.teal,
+//           ),
+//           Container(
+//             margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+//             //width: 100,
+//             color: Colors.deepPurple,
+//           ),
+//           Container(
+//             margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+//             //width: 100,
+//             color: Colors.amber,
+//           ),
+//           Container(
+//             margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+//             //width: 100,
+//             color: Colors.indigo,
+//           ),
+//           Container(
+//             margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+//             //width: 100,
+//             color: Colors.deepOrangeAccent,
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
