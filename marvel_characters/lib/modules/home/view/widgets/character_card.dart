@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:marvel_characters/application/route_manager.dart';
-import 'package:marvel_characters/models/character_model.dart';
+import 'package:marvel_characters/models/response/character_model.dart';
+import 'package:marvel_characters/modules/shared/widgets/toggle_favorite_button.dart';
 
 class CharacterCard extends StatelessWidget {
   const CharacterCard(this.character, {super.key});
@@ -24,7 +25,7 @@ class CharacterCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
         ),
         child: Hero(
-          tag: character!.id!,
+          tag: character!.id!.toString() + character!.name!,
           child: ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(40)),
             child: Stack(
@@ -59,6 +60,10 @@ class CharacterCard extends StatelessWidget {
                       ),
                     ),
                   ),
+                ),
+                Align(
+                  alignment: Alignment(0.85, -0.85),
+                  child: ToggleFavoriteButton.small(character),
                 ),
               ],
             ),

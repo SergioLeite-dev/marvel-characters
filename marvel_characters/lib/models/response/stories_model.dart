@@ -1,4 +1,4 @@
-import 'package:marvel_characters/models/stories_item_model.dart';
+import 'package:marvel_characters/models/response/stories_item_model.dart';
 
 class Stories {
   int? available;

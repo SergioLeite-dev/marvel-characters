@@ -1,4 +1,4 @@
-import 'package:marvel_characters/models/resource_item_model.dart';
+import 'package:marvel_characters/models/response/resource_item_model.dart';
 
 class Resource {
   int? available;
