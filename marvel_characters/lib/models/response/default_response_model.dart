@@ -1,13 +1,13 @@
 import 'package:marvel_characters/models/response/data_model.dart';
 
 class DefaultResponse {
-  int? code;
-  String? status;
-  String? copyright;
-  String? attributionText;
-  String? attributionHtml;
-  String? etag;
-  Data? data;
+  final int? code;
+  final String? status;
+  final String? copyright;
+  final String? attributionText;
+  final String? attributionHtml;
+  final String? etag;
+  final Data? data;
 
   DefaultResponse._({
     this.code,

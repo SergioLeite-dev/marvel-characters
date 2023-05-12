@@ -1,6 +1,6 @@
 class Url {
-  String? type;
-  String? url;
+  final String? type;
+  final String? url;
 
   Url._({
     this.type,

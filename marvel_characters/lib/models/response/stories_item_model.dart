@@ -1,7 +1,7 @@
 class StoriesItem {
-  String? resourceUri;
-  String? name;
-  String? type;
+  final String? resourceUri;
+  final String? name;
+  final String? type;
 
   StoriesItem._({
     this.resourceUri,

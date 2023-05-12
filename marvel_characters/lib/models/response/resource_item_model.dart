@@ -1,6 +1,6 @@
 class ResourceItem {
-  String? resourceUri;
-  String? name;
+  final String? resourceUri;
+  final String? name;
 
   ResourceItem._({
     this.resourceUri,

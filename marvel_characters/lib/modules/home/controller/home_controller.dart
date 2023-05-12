@@ -63,6 +63,7 @@ class HomeController extends GetxController {
         debugPrint(c.name);
       }
     }
+    isLoading = false;
   }
 
   void filterCharacters() {
@@ -74,16 +75,14 @@ class HomeController extends GetxController {
   }
 
   _scrollListener() {
-    //TODO: Add Loading Animation.
     if (scrollController.offset >= scrollController.position.maxScrollExtent && !scrollController.position.outOfRange) {
-      isLoading = true;
-
-      if (isLoading && finishedInitializing) {
+      if (finishedInitializing) {
+        isLoading = true;
         debugPrint("Loading more Characters...");
+        update();
         pageCount++;
         charactersRequest = charactersRequest.copyWith(offset: pageCount * 15);
         getCharacters();
-        isLoading = false;
       }
     }
   }
