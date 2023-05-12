@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:marvel_characters/models/response/character_model.dart';
 import 'package:marvel_characters/modules/details/view/details_page.dart';
+import 'package:marvel_characters/modules/favorites/favorites_bindings.dart';
 import 'package:marvel_characters/modules/favorites/view/favorites_page.dart';
 import 'package:marvel_characters/modules/home/home_bindings.dart';
 import 'package:marvel_characters/modules/home/view/home_page.dart';
@@ -25,7 +26,8 @@ class RouteManager {
     ),
     GetPage(
       name: favorites,
-      page: () => FavoritesPage(),
+      binding: FavoritesBindings(),
+      page: () => FavoritesPage(Get.find()),
     ),
   ];
 }

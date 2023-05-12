@@ -4,9 +4,8 @@ import 'package:marvel_characters/modules/favorites/controller/favorites_control
 import 'package:marvel_characters/modules/home/view/widgets/character_card.dart';
 
 class FavoritesPage extends StatelessWidget {
-  FavoritesPage({super.key});
-
-  final controller = Get.find<FavoritesController>();
+  final FavoritesController _controller;
+  const FavoritesPage(this._controller, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +26,8 @@ class FavoritesPage extends StatelessWidget {
               ),
               keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
               shrinkWrap: true,
-              itemCount: controller.favorites.length,
-              itemBuilder: (context, index) => CharacterCard(controller.favorites[index]),
+              itemCount: _controller.favorites.length,
+              itemBuilder: (context, index) => CharacterCard(_controller.favorites[index]),
             );
           },
         ),
