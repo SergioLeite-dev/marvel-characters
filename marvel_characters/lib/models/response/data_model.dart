@@ -1,11 +1,11 @@
 import 'package:marvel_characters/models/response/character_model.dart';
 
 class Data {
-  int? offset;
-  int? limit;
-  int? total;
-  int? count;
-  List<Character>? results;
+  final int? offset;
+  final int? limit;
+  final int? total;
+  final int? count;
+  final List<Character>? results;
 
   Data._({
     this.offset,

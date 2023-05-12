@@ -4,17 +4,17 @@ import 'package:marvel_characters/models/response/thumbnail_model.dart';
 import 'package:marvel_characters/models/response/url_model.dart';
 
 class Character {
-  int? id;
-  String? name;
-  String? description;
-  String? modified;
-  Thumbnail? thumbnail;
-  String? resourceUri;
-  Resource? comics;
-  Resource? series;
-  Stories? stories;
-  Resource? events;
-  List<Url>? urls;
+  final int? id;
+  final String? name;
+  final String? description;
+  final String? modified;
+  final Thumbnail? thumbnail;
+  final String? resourceUri;
+  final Resource? comics;
+  final Resource? series;
+  final Stories? stories;
+  final Resource? events;
+  final List<Url>? urls;
 
   Character._({
     this.id,

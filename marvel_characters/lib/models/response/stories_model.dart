@@ -1,10 +1,10 @@
 import 'package:marvel_characters/models/response/stories_item_model.dart';
 
 class Stories {
-  int? available;
-  String? collectionUri;
-  List<StoriesItem>? items;
-  int? returned;
+  final int? available;
+  final String? collectionUri;
+  final List<StoriesItem>? items;
+  final int? returned;
 
   Stories._({
     this.available,

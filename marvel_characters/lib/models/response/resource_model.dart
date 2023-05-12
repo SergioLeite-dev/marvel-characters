@@ -1,10 +1,10 @@
 import 'package:marvel_characters/models/response/resource_item_model.dart';
 
 class Resource {
-  int? available;
-  String? collectionUri;
-  List<ResourceItem>? items;
-  int? returned;
+  final int? available;
+  final String? collectionUri;
+  final List<ResourceItem>? items;
+  final int? returned;
 
   Resource._({
     this.available,

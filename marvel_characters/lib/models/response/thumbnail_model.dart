@@ -1,6 +1,6 @@
 class Thumbnail {
-  String? path;
-  String? extension;
+  final String? path;
+  final String? extension;
 
   Thumbnail._({
     this.path,
